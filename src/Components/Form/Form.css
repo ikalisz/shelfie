@@ -1,0 +1,17 @@
+.parentFormDiv {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+
+}
+
+.formAddDiv {
+    width: 550px;
+    height: 620px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    background: #3AD886;
+}
