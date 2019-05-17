@@ -19,12 +19,6 @@ export default class Form extends Component {
         this.handleResetState()
     }
 
-    componentDidUpdate = () => {
-        if (this.state.submitted) {
-            return <Redirect to='/' push={true} />
-        }
-    }
-
     handleResetState() {
         this.setState({
             name: '',
@@ -54,6 +48,9 @@ export default class Form extends Component {
     }
 
     render() {
+        if (this.state.submitted) {
+            return <Redirect to='/' push={true} />
+        }
         return (
             <div className="parentFormDiv">
                 <div className="formAddDiv">

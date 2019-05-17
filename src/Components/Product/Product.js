@@ -1,8 +1,15 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import './Product.css'
+import axios from 'axios'
 
 export default function Product (props) {
+    function deleteProduct() {
+        axios.delete(`/api/product/${props.id}`)
+        .then(() => {
+            props.handleGetInventory()
+        })
+    }
     return (
         <div className="productDiv">
             <img className="productImg" src={props.img} alt=""/>
@@ -12,7 +19,7 @@ export default function Product (props) {
                     <p className="productPrice text">${props.price}</p>
                 </div>
                 <footer className="productButtonsFooter">
-                    <button className="productButton delete">Delete</button>
+                    <button onClick={deleteProduct} className="productButton delete">Delete</button>
                     <Link ><button className="productButton edit">Edit</button></Link>
                 </footer>
             </main>
