@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const massive = require('massive')
+const product_ctrl = require('./controllers/product_controller')
 
 const {SERVER_PORT, CONNECTION_STRING} = process.env
 
@@ -16,3 +17,6 @@ massive(CONNECTION_STRING, {strings: __dirname + '/db'})
 .catch(err => {
     console.log(err)
 })
+
+app.get('/api/inventory', product_ctrl.get_products)
+
