@@ -6,6 +6,7 @@
 }
 
 .formAddDiv {
+    margin-top: 60px;
     width: 550px;
     height: 620px;
     display: flex;
@@ -14,4 +15,43 @@
     justify-content: space-evenly;
     border-radius: 5px;
     background: #3AD886;
+}
+
+.formImg {
+    height: 300px;
+    width: 420px;
+    border: solid 1px #AB2A19;
+}
+
+.inputDiv {
+    width: 90%;
+}
+
+.formDivText {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.formButtonsDiv {
+    width: 85%;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+}
+
+.inputField {
+    width: 100%;
+}
+
+.formButton {
+    outline: none;
+    border: none;
+    background: #ED6B5A;
+    height: 100%;
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
 }

@@ -27,6 +27,7 @@ const controller = {
     add_product: (req, res) => {
         const database = req.app.get('db')
         const {name, price, img} = req.body
+        console.log('here!')
         database.add_product({name, price, img})
         .then(response => {
             res.status(200)
@@ -45,6 +46,7 @@ const controller = {
         })
         .catch(err => {
             console.log(`We ran into error ${err}`)
+            res.status(500)
         })
     }
 }
