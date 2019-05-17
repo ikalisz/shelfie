@@ -6,6 +6,8 @@ const product_ctrl = require('./controllers/product_controller')
 
 const {SERVER_PORT, CONNECTION_STRING} = process.env
 
+app.use(express.json())
+
 massive(CONNECTION_STRING, {scripts: __dirname + '/db'})
 .then(database => {
     app.set('db', database)

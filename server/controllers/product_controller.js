@@ -15,9 +15,9 @@ const controller = {
     get_product: (req, res) => {
         const database = req.app.get('db')
         const {id} = req.params
-        database.get_products(id)
+        database.get_products({id})
         .then(product => {
-            res.status(200).send(products)
+            res.status(200).send(product)
         })
         .catch(err => {
             console.log(`We ran into error ${err}`)
@@ -25,7 +25,27 @@ const controller = {
         })
     },
     add_product: (req, res) => {
-
+        const database = req.app.get('db')
+        const {name, price, img} = req.body
+        database.add_product({name, price, img})
+        .then(response => {
+            res.status(200)
+        })
+        .catch(err => {
+            console.log(`We ran into error ${err}`)
+            res.status(500)
+        })
+    },
+    delete_product: (req, res) => {
+        const database = req.app.get('db')
+        const {id} = req.params
+        database.delete_product({id})
+        .then(response => {
+            res.status(200)
+        })
+        .catch(err => {
+            console.log(`We ran into error ${err}`)
+        })
     }
 }
 
