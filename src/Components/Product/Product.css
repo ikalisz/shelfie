@@ -1,0 +1,7 @@
+.productDiv {
+    height: 232px;
+    width: 600px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

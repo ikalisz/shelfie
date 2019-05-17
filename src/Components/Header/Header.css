@@ -1,0 +1,22 @@
+.shelfieHeader {
+    height: 100px;
+    width: 100vw;
+    background: #AB2A19;
+    display: flex;
+    align-items: center;
+}
+
+.dashboardButton {
+    height: 40px;
+    width: 6.8em;
+    background: #ED6B5A;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.font {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif
+}
