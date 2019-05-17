@@ -22,4 +22,5 @@ massive(CONNECTION_STRING, {scripts: __dirname + '/db'})
 
 app.get('/api/inventory', product_ctrl.get_products)
 app.get('/api/product/:id', product_ctrl.get_product)
+app.delete('/api/product/:id', product_ctrl.delete_product)
 
