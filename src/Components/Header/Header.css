@@ -6,13 +6,33 @@
     align-items: center;
 }
 
+.shelfieHeader h1 {
+    color: #fff;
+    margin-left: .4em;
+}
+
+.shelfieHeaderButtons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 5em;
+}
+
 .dashboardButton {
-    height: 40px;
-    width: 6.8em;
+    margin-right: 10px;
+    width: 6.4em;
+}
+
+.addInventoryButton {
+    width: 8em;
+}
+
+.button {
     background: #ED6B5A;
     border: none;
     outline: none;
     border-radius: 5px;
+    height: 40px;
 }
 
 .font {
@@ -20,3 +40,9 @@
     font-size: 18px;
     font-family: 'Open Sans', sans-serif
 }
+
+.shelfieIcon {
+    transform: scale(.75);
+    margin-left: 4em;
+}
+

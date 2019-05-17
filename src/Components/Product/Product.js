@@ -5,15 +5,15 @@ import './Product.css'
 export default function Product (props) {
     return (
         <div className="productDiv">
-            <img src={props.img} alt=""/>
-            <main>
+            <img className="productImg" src={props.img} alt=""/>
+            <main className="productInfoAndLinks">
                 <div>
                     <p>{props.name}</p>
                     <p>${props.price}</p>
                 </div>
-                <footer>
-                    <button>Delete</button>
-                    <Link ><button>Edit</button></Link>
+                <footer className="productButtonsFooter">
+                    <button className="productButton delete">Delete</button>
+                    <Link ><button className="productButton edit">Edit</button></Link>
                 </footer>
             </main>
         </div>
