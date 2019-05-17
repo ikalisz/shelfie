@@ -7,9 +7,9 @@ export default function Product (props) {
         <div className="productDiv">
             <img className="productImg" src={props.img} alt=""/>
             <main className="productInfoAndLinks">
-                <div>
-                    <p>{props.name}</p>
-                    <p>${props.price}</p>
+                <div className="productText">
+                    <p className="productName text">{props.name}</p>
+                    <p className="productPrice text">${props.price}</p>
                 </div>
                 <footer className="productButtonsFooter">
                     <button className="productButton delete">Delete</button>
