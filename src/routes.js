@@ -7,5 +7,6 @@ export default (
     <Switch>
         <Route exact path='/' component={Dashboard} />
         <Route path='/add' component={Form} />
+        <Route path='/edit/:id' component={Form} />
     </Switch>
 )

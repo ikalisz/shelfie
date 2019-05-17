@@ -27,6 +27,7 @@ const controller = {
     add_product: (req, res) => {
         const database = req.app.get('db')
         const {name, price, img} = req.body
+        console.log(name)
         console.log('here!')
         database.add_product({name, price, img})
         .then(response => {
@@ -41,8 +42,8 @@ const controller = {
         const database = req.app.get('db')
         const {id} = req.params
         database.delete_product({id})
-        .then(response => {
-            res.status(200)
+        .then(inventory => {
+            res.status(200).send(inventory)
         })
         .catch(err => {
             console.log(`We ran into error ${err}`)

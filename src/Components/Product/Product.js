@@ -6,8 +6,8 @@ import axios from 'axios'
 export default function Product (props) {
     function deleteProduct() {
         axios.delete(`/api/product/${props.id}`)
-        .then(() => {
-            props.handleGetInventory()
+        .then(inventory => {
+            return props.handleUpdateInventory(inventory.data)
         })
     }
     return (
@@ -20,7 +20,7 @@ export default function Product (props) {
                 </div>
                 <footer className="productButtonsFooter">
                     <button onClick={deleteProduct} className="productButton delete">Delete</button>
-                    <Link ><button className="productButton edit">Edit</button></Link>
+                    <Link to={`/edit/${props.id}`} ><button className="productButton edit">Edit</button></Link>
                 </footer>
             </main>
         </div>

@@ -10,13 +10,14 @@ export default class Form extends Component {
             name: '',
             price: 0,
             img: 'https://via.placeholder.com/420x300',
-            submitted: false,
         }
         this.handleResetState = this.handleResetState.bind(this)
     }
 
     componentDidMount = () => {
-        this.handleResetState()
+        if (this.props.match.params.id) {
+            axios.get(`/api/product/${this.props.match.params.id}`)
+        }
     }
 
     handleResetState() {
@@ -25,6 +26,10 @@ export default class Form extends Component {
             price: 0,
             img: 'https://via.placeholder.com/420x300',
         })
+    }
+
+    componentDidUpdate = () => {
+        this.handleResetState()
     }
 
     handleUpdateImg = (e) => {
@@ -43,14 +48,11 @@ export default class Form extends Component {
         const {name, price, img} = this.state
         axios.post('/api/addproduct', {name, price, img})
         .then(() => {
-            this.setState({submitted: true})
+            return <Redirect to='/' push={true} />
         })
     }
 
     render() {
-        if (this.state.submitted) {
-            return <Redirect to='/' push={true} />
-        }
         return (
             <div className="parentFormDiv">
                 <div className="formAddDiv">
@@ -61,7 +63,7 @@ export default class Form extends Component {
                     </div>
                     <div className="productNameDiv inputDiv">
                         <p className="formDivText">Product Name:</p>
-                        <input className="inputField" type="text" placeholder="Product name here!" />
+                        <input className="inputField" type="text" placeholder="Product name here!" onChange={(e) => {this.handleUpdateName(e)}} />
                     </div>
                     <div className="productPriceDiv inputDiv">
                         <p className="formDivText">Price:</p>
