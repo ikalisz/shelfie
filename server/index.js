@@ -6,7 +6,7 @@ const product_ctrl = require('./controllers/product_controller')
 
 const {SERVER_PORT, CONNECTION_STRING} = process.env
 
-massive(CONNECTION_STRING, {strings: __dirname + '/db'})
+massive(CONNECTION_STRING, {scripts: __dirname + '/db'})
 .then(database => {
     app.set('db', database)
     console.log('Database connected')
