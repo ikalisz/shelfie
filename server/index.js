@@ -25,4 +25,5 @@ app.get('/api/product/:id', product_ctrl.get_product)
 app.delete('/api/product/:id', product_ctrl.delete_product)
 app.post('/api/addproduct', product_ctrl.add_product)
 app.put('/api/product/:id', product_ctrl.update_product)
+//Here are all my endpoints, the ones with /:id are trying to target specific posts like my delete and update
 
